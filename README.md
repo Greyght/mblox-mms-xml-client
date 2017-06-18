@@ -8,7 +8,7 @@ You can install the library via [Composer](http://getcomposer.org/). Add this to
 ```json
 {
   "require": {
-    "jgodish/mblox-mms-php": "1.*"
+    "jgodish/mblox-mms-xml-client": "1.*"
   }
 }
 ```
