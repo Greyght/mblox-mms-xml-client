@@ -1,0 +1,23 @@
+{
+  "name": "jgodish/Mblox-MMS-XML-Client",
+  "description": "Mblox MMS XML PHP Client",
+  "license": "MIT",
+  "keywords": ["sms","mms"],
+  "authors": [
+    {
+      "name": "Jason Godish",
+      "email": "jgodish@gmail.com"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mblox\\Mms\\Xml\\": "src/"
+    }
+  }
+}
