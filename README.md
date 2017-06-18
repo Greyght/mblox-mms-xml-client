@@ -26,13 +26,13 @@ require_once('vendor/autoload.php');
 
 Usage example:
 ```php
-$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code', 'service_id');
+$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code');
 $slide = (new \Mblox\Mms\Xml\Slide)->setImage('http://www.yoursite.com/images/1.jpg')->setText('This is some text for your slide');
 $response = $mblox->mms()->send('mytestmms', '15555555555', [$slide], 'This is some fallback text');
 ```
 ## Handling API Response's
 ```php
-$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code', 'service_id');
+$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code');
 $slide = (new \Mblox\Mms\Xml\Slide)->setImage('http://www.yoursite.com/images/1.jpg')->setText('This is some text for your slide');
 
 $response = $mblox->mms()->send('mytestmms', '15555555555', [$slide], 'This is some fallback text');
@@ -50,30 +50,30 @@ $response->toString();
 ## Available Methods
 ### Save MMS
 ```php
-$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code', 'service_id');
+$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code');
 $slide = (new \Mblox\Mms\Xml\Slide)->setImage('http://www.yoursite.com/images/1.jpg')->setText('This is some text for your slide');
 $mblox->mms()->save('mytestmms', 'Message Subject', [$slide]);
 ```
 ### Send Saved MMS
 ```php
-$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code', 'service_id');
+$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code');
 $ddm = new \Mblox\Mms\Xml\DeviceDiscovery('This message is free of charge and will allow us to deliver your content nice and smooth');
 $mblox->mms()->sendSaved('mms_id', '15555555555', 'This is some fallback text', $ddm);
 ```
 ### Send MMS
 ```php
-$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code', 'service_id');
+$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code');
 $slide = (new \Mblox\Mms\Xml\Slide)->setImage('http://www.yoursite.com/images/1.jpg')->setText('This is some text for your slide');
 $mblox->mms()->send('mytestmms', '15555555555', [$slide], 'This is some fallback text');
 ```
 ### Delete MMS
 ```php
-$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code', 'service_id');
+$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code');
 $mblox->mms()->delete('mms_id');
 ```
 ### Get MMS Templates
 ```php
-$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code', 'service_id');
+$mblox = \Mblox\Mms\Xml\Client('your_api_key', 'short_code');
 $mblox->mms()->getTemplates();
 ```
 
