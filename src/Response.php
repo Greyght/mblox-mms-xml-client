@@ -26,11 +26,13 @@ class Response {
 	 * @return bool
 	 */
 	public function isSuccessful() {
-		if ( ! isset($this->response['status']) ) {
+		$response = $this->toArray();
+
+		if ( ! isset($response['status']) ) {
 			return false;
 		}
 
-		return $this->response['status'] === 'Success';
+		return $response['status'] === 'Success';
 	}
 
 	/**
@@ -39,11 +41,13 @@ class Response {
 	 * @return bool
 	 */
 	public function isFailure() {
-		if ( ! isset($this->response['status']) ) {
+		$response = $this->toArray();
+
+		if ( ! isset($response['status']) ) {
 			return false;
 		}
 
-		return $this->response['status'] === 'Failure';
+		return $response['status'] === 'Failure';
 	}
 
 	/**
