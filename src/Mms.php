@@ -35,11 +35,12 @@ class Mms extends AbstractClient {
 	 * @param $id
 	 * @param $to
 	 * @param $fallback_text
+	 * @param $custom_text
 	 * @param DeviceDiscovery|null $ddm
 	 *
 	 * @return Response
 	 */
-	public function sendSaved($id, $to, $fallback_text, DeviceDiscovery $ddm = null) {
+	public function sendSaved($id, $to, $fallback_text, $custom_text = null, DeviceDiscovery $ddm = null) {
 		$data = [
 			'action'            => 'sendSavedMMS',
 			'to'                => $to,
@@ -48,6 +49,10 @@ class Mms extends AbstractClient {
 			'mms-id'            => $id,
 			'fallback-sms-text' => $fallback_text,
 		];
+
+		if ( ! is_null($custom_text) ) {
+			$data['custom-text'] = ['slide' => '1', 'value' => $custom_text];
+		}
 
 		if ( ! is_null($ddm) ) {
 			$data = array_merge($data, $ddm->toArray());
