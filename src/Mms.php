@@ -13,18 +13,21 @@ class Mms extends AbstractClient {
 	 * Save a MMS message for later use
 	 *
 	 * @param $name
-	 * @param $subject
 	 * @param array $slides Array of slide objects
+	 * @param string|null $subject
 	 *
 	 * @return Response
 	 */
-	public function save($name, $subject, array $slides) {
+	public function save($name, array $slides, $subject = null) {
 		$data = [
 			'action'          => 'saveMMS',
-			'message-subject' => $subject,
 			'name'            => $name,
 			'slide'           => $slides,
 		];
+
+		if ( ! is_null($subject) ) {
+			$data['message-subject'] = $subject;
+		}
 
 		return $this->http->send($this->generateXml($data));
 	}
