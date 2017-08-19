@@ -246,7 +246,7 @@ class Slide {
 		}
 
 		if ( ! is_null($this->video) ) {
-			$slide['audio'] = ['url' => $this->audio];
+			$slide['video'] = ['url' => $this->video];
 		}
 
 		if ( ! is_null($this->vcard) ) {
