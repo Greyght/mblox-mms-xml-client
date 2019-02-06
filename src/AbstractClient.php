@@ -74,4 +74,13 @@ abstract class AbstractClient {
 		}
 	}
 
+	/**
+	 * @param array $data
+	 *
+	 * @return Response
+	 */
+	public function sendRequest(array $data) {
+		return $this->http->send($this->generateXml($data));
+	}
+
 }

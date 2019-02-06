@@ -29,7 +29,7 @@ class Mms extends AbstractClient {
 			$data['message-subject'] = $subject;
 		}
 
-		return $this->http->send($this->generateXml($data));
+		return $this->sendRequest($data);
 	}
 
 	/**
@@ -61,7 +61,7 @@ class Mms extends AbstractClient {
 			$data = array_merge($data, $ddm->toArray());
 		}
 
-		return $this->http->send($this->generateXml($data));
+		return $this->sendRequest($data);
 	}
 
 	/**
@@ -85,7 +85,7 @@ class Mms extends AbstractClient {
 			'fallback-sms-text' => $fallback_text,
 		];
 
-		return $this->http->send($this->generateXml($data));
+		return $this->sendRequest($data);
 	}
 
 	/**
@@ -101,7 +101,7 @@ class Mms extends AbstractClient {
 			'mms-id' => $id,
 		];
 
-		return $this->http->send($this->generateXml($data));
+		return $this->sendRequest($data);
 	}
 
 	/**
@@ -124,7 +124,7 @@ class Mms extends AbstractClient {
 			$data['start-date'] = $start_date;
 		}
 
-		return $this->http->send($this->generateXml($data));
+		return $this->sendRequest($data);
 	}
 
 }
