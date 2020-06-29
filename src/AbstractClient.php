@@ -41,7 +41,7 @@ abstract class AbstractClient {
 		$xml = new SimpleXMLElement('<request/>');
 		$this->arrayToXml(array_merge($this->getBaseXml(), $data), $xml);
 
-		return $xml->asXML();
+		return html_entity_decode($xml->asXML());
 	}
 
 	/**
