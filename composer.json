@@ -4,7 +4,7 @@
   "license": "MIT",
   "keywords": ["sms","mms"],
   "require": {
-    "guzzlehttp/guzzle": "~6.0"
+    "guzzlehttp/guzzle": "~7.0"
   },
   "require-dev": {
     "phpunit/phpunit": "~4.0"
