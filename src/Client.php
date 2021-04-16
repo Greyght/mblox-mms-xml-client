@@ -27,9 +27,10 @@ class Client {
 	 */
 	protected $mms;
 
-	public function __construct($api_key = null, $short_code = null) {
+	public function __construct($api_key = null, $short_code = null, $service_id = null) {
 		$this->setApiKey($api_key);
-		$this->setShortCode($short_code);
+		$this->setServiceId( is_null($service_id) ? "{$short_code}mms" : $service_id);
+        $this->setShortCode($short_code);
 	}
 
 	/**
@@ -65,6 +66,19 @@ class Client {
 		return $this->api_key;
 	}
 
+    /**
+     * Set the short code
+     *
+     * @param $short_code
+     *
+     * @return $this
+     */
+    public function setServiceId($service_id) {
+        $this->service_id = $service_id;
+
+        return $this;
+    }
+
 	/**
 	 * Set the short code
 	 *
@@ -74,7 +88,6 @@ class Client {
 	 */
 	public function setShortCode($short_code) {
 		$this->short_code = $short_code;
-		$this->service_id = "{$short_code}mms";
 
 		$this->mms = new Mms($this);
 
